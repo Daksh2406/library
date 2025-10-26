@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ambedkar Library Services</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background: #f5f6fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* --- Header --- */
+    header {
+      background: #1a237e;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+    header h1 {
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      background: url('library-hero.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* --- Services Section --- */
+    .services {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .services h2 {
+      font-size: 32px;
+      color: #1a237e;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .service-box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    }
+
+    .service-icon {
+      font-size: 42px;
+      color: #3949ab;
+      margin-bottom: 15px;
+    }
+
+    .service-box h3 {
+      color: #222;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .service-box p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background: #1a237e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 26px; }
+      .hero p { font-size: 16px; }
+      header h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Dr. B. R. Ambedkar Library</h1>
+    <p>Knowledge | Discipline | Equality</p>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Our Library Services</h2>
+      <p>Empowering minds through access to books, technology, and lifelong learning opportunities.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h2>Library Services</h2>
+    <div class="service-grid">
+
+      <div class="service-box">
+        <div class="service-icon">📚</div>
+        <h3>Book Lending Service</h3>
+        <p>Members can borrow books, journals, and magazines for study and research with easy renewal options.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon">💻</div>
+        <h3>Digital Library</h3>
+        <p>Access e-books, online journals, and study material through our modern digital library system.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon">👨‍🏫</div>
+        <h3>Study & Reading Rooms</h3>
+        <p>Quiet and comfortable reading spaces for students and researchers with proper lighting and seating.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon">🎓</div>
+        <h3>Career Guidance</h3>
+        <p>Workshops and counseling sessions to help students prepare for competitive exams and higher studies.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon">🌐</div>
+        <h3>Free Internet Access</h3>
+        <p>High-speed Wi-Fi for online learning, digital resources, and academic research.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon">🤝</div>
+        <h3>Community Programs</h3>
+        <p>Organizing seminars, book fairs, and educational events to encourage learning and awareness.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Dr. B. R. Ambedkar Library | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

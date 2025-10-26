@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Image & Name with Borders</title>
+
+  <style>
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans";
+      background: #f6f7fb;
+      color: #222;
+      padding: 32px;
+    }
+
+    h1 {
+      font-size: clamp(20px, 2.6vw, 28px);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      justify-items: center;
+    }
+
+    /* Card */
+    .card {
+      background: #fff;
+      border: 2px solid #222;
+      border-radius: 16px;
+      padding: 16px;
+      width: 100%;
+      max-width: 260px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    }
+
+    /* Photo Box */
+    .photo-box {
+      border: 2px dashed #5c6ac4;
+      border-radius: 12px;
+      overflow: hidden;
+      background: whitesmoke;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1; /* ✅ keeps square shape */
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+    }
+
+    /* Name Box */
+    .name-box {
+      margin-top: 12px;
+      border: 2px solid #ff6b6b;
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      background: #fff7f7;
+      font-size: 15px;
+    }
+
+    /* Variations */
+    .round { border-radius: 999px; }
+    .thin { border-width: 1px; }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      body { padding: 20px; }
+      .card { max-width: 100%; }
+      .name-box { font-size: 14px; padding: 8px; }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Library Achievers</h1>
+
+  <div class="grid">
+    <!-- Card 1 -->
+    <figure class="card thin">
+      <div class="photo-box">
+        <img src="Achfitm.jpg" alt="Profile" />
+      </div>
+      <figcaption class="name-box round">Aakash Gautam, EMRS-TGT, UGC-NET JRF</figcaption>
+    </figure>
+
+    <!-- Card 2 -->
+    <figure class="card thin">
+      <div class="photo-box">
+        <img src="shivam.jpg" alt="Profile" />
+      </div>
+      <figcaption class="name-box round">Shivam – UPPCL (Executive Assistant)</figcaption>
+    </figure>
+
+    <!-- Card 3 -->
+    <figure class="card thin">
+      <div class="photo-box">
+        <img src="achfitm (3).jpg" alt="Profile" />
+      </div>
+      <figcaption class="name-box round">Prince Kumar – UP Police</figcaption>
+    </figure>
+
+    <!-- Card 4 -->
+    <figure class="card">
+      <div class="photo-box">
+        <img src="achhfitm.jpg" alt="Profile" />
+      </div>
+      <figcaption class="name-box">Mayank – UP Police</figcaption>
+    </figure>
+
+    <!-- Card 5 -->
+    <figure class="card thin">
+      <div class="photo-box">
+        <img src="achfitm (2).jpg" alt="Profile" />
+      </div>
+      <figcaption class="name-box round">Shalu – UP Police</figcaption>
+    </figure>
+
+    <!-- Card 6 -->
+    <figure class="card thin">
+      <div class="photo-box">
+        <img src="abak.jpg" alt="Profile" />
+      </div>
+      <figcaption class="name-box round">Abhishek – UP Police</figcaption>
+    </figure>
+  </div>
+</body>
+</html>

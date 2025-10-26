@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Website</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* --- Header --- */
+    header {
+      background: #333;
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 { font-size: 22px; }
+
+    /* --- 3 Dot Menu --- */
+    .kebab { position: relative; display: inline-block; }
+    .kebab button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+    }
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      display: block;
+      margin: 3px 0;
+    }
+    .menu {
+      position: absolute;
+      right: 0;
+      top: 40px;
+      background: #fff;
+      min-width: 160px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.15);
+      border-radius: 8px;
+      display: none;
+      z-index: 100;
+    }
+    .menu a {
+      display: block;
+      padding: 10px 12px;
+      text-decoration: none;
+      color: #333;
+    }
+    .menu a:hover { background: #f3f3f3; }
+    .menu.show { display: block; }
+
+    /* --- Hero Section --- */
+    .hero {
+      height: 100vh;
+      background: url('logo.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    .hero h2 { font-size: 30px; margin-bottom: 10px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
+    .hero p { font-size: 20px; margin-bottom: 20px; color: yellow; }
+
+    /* --- Sections --- */
+    section {
+      padding: 60px 30px;
+      text-align: center;
+      background: white;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 1000px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    section h2 { margin-bottom: 20px; font-size: 32px; }
+    section p, pre { color: #555; font-size: 16px; text-align: left; }
+
+    /* --- Slideshow --- */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      aspect-ratio: 16/9; /* ✅ keeps correct height on all screens */
+      background: #000;
+    }
+
+    .mySlides {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .mySlides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* ✅ images fit perfectly */
+      border-radius: 12px;
+    }
+
+    .activeSlide {
+      display: block;
+      animation: fade 1.2s ease-in-out;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dotSlide {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .activeDot { background-color: #333; }
+
+    /* --- Footer --- */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      header h1 { font-size: 20px; }
+      .hero { height: 50vh; }
+      .hero h2 { font-size: 24px; }
+      .hero p { font-size: 16px; }
+      section { padding: 30px 15px; }
+      .slideshow-container { aspect-ratio: 4/3; }
+    }
+
+    @media (max-width: 480px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .hero { height: 20vh; }
+      .hero h2 { font-size: 20px; }
+      section h2 { font-size: 22px; }
+      .dotSlide { width: 8px; height: 8px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Sir Ambedkar Library Website</h1>
+    <div class="kebab">
+      <button id="kebabBtn">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </button>
+      <div class="menu" id="kebabMenu">
+        <a href="index.html">Home</a>
+        <a href="https://form.jotform.com/252773912832058">Admission</a>
+        <a href="Services.html">Services</a>
+        <a href="Achievement.html">Achievement</a>
+        <a href="Photo.html">Photo</a>
+        <a href="About.html">About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    
+  </section>
+
+  <!-- Library Rules -->
+  <section>
+    <h2>Library Rules</h2>
+    <pre>
+पुस्तकालय में हर समय 
+शांति बनाए रखें।
+पुस्तकों और सामग्रियों 
+को सावधानी से संभालें।
+उधार ली गई पुस्तकों को 
+नियत तिथि पर या उससे पहले लौटा दें।
+पुस्तकालय के अंदर मोबाइल 
+फ़ोन को साइलेंट मोड पर रखें।
+अंदर खाने-पीने की कोई भी 
+चीज़ ले जाने की अनुमति नहीं है।
+पुस्तकालय के संसाधनों का उपयोग
+ केवल अध्ययन और शोध के लि
+ ए करें।
+पुस्तकालय द्वारा दिए निर्देशों का
+ पालन करें।
+पुस्तकों या फ़र्नीचर पर न लिखें 
+और न ही निशान लगाएँ।
+अनुशासन और सम्मानजनक माहौल बनाए रखें।
+उपयोग में न होने पर लाइट, पंखे
+ या सिस्टम बंद कर दें।
+    </pre>
+  </section>
+
+ <section>
+  <h2>Our motive</h2>
+    <pre>
+सामाजिक और निःशुल्क पुस्तकालय 
+(Social & Free Library) 
+का विचार बच्चों और युवाओं के 
+लिए बहुत उपयोगी हो सकता है। 
+यह केवल पढ़ाई का स्थान नहीं होगा,
+ बल्कि सामाजिक विकास, 
+संस्कार और रचनात्मकता का भी केंद्र बनेगा। 
+बच्चा सिर्फ पढ़ा-लिखा इंसान नहीं बनेगा,
+ बल्कि एक संवेदनशील, जिम्मेदार 
+ और समाज-सेवी नागरिक बनेगा। 
+ समाज में एक नई
+  पीढ़ी तैयार होगी जो
+   केवल नौकरी की सोच से बाहर निकलकर,
+    समाज के लिए काम करेगी।
+    </pre>
+  </section>
+
+  <!-- Responsive Slideshow -->
+  <div class="slideshow-container">
+    <div class="mySlides activeSlide"><img src="ab.jpg" alt="Library Image 1"></div>
+    <div class="mySlides"><img src="Anim.jpg" alt="Library Image 2"></div>
+    <div class="mySlides"><img src="Anim (2).jpg" alt="Library Image 3"></div>
+    <div class="mySlides"><img src="anim (3).jpg" alt="Library Image 4"></div>
+    <div class="mySlides"><img src="girl.jpg" alt="Library Image 5"></div>
+  </div>
+
+  <div class="dots">
+    <span class="dotSlide activeDot"></span>
+    <span class="dotSlide"></span>
+    <span class="dotSlide"></span>
+    <span class="dotSlide"></span>
+    <span class="dotSlide"></span>
+  </div>
+
+  <!-- About -->
+  <section>
+    <h2>About This Library</h2>
+    <p>
+पुस्तकालय ज्ञान और सीखने का एक स्थान है, जहाँ सभी के लिए पुस्तकें, पत्रिकाएँ और डिजिटल संसाधन उपलब्ध हैं। यह एक शांतिपूर्ण वातावरण प्रदान करता है जो पढ़ने, शोध और रचनात्मकता को प्रोत्साहित करता है। जिज्ञासा और अनुशासन को पोषित करके, पुस्तकालय आजीवन सीखने को प्रेरित करता है और समाज को आकार देने में महत्वपूर्ण भूमिका निभाता है।
+    </p>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>
+Email: Anujmrt0026@mail.com
+<br>
+
+Phone: +91 +919627055428
+<br>
+
+Add:
+
+Mohalla khalsa village abdullapur Meerut U.P 250001
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Library Website | Made by Daksh Kumar</p>
+  </footer>
+
+  <script>
+    // --- Menu ---
+    document.addEventListener("DOMContentLoaded", () => {
+      const kebabBtn = document.getElementById("kebabBtn");
+      const kebabMenu = document.getElementById("kebabMenu");
+
+      kebabBtn.addEventListener("click", () => {
+        kebabMenu.classList.toggle("show");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!kebabBtn.contains(e.target) && !kebabMenu.contains(e.target)) {
+          kebabMenu.classList.remove("show");
+        }
+      });
+    });
+
+    // --- Slideshow ---
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.getElementsByClassName("dotSlide");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("activeSlide");
+        dots[i].classList.remove("activeDot");
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      slides[slideIndex - 1].classList.add("activeSlide");
+      dots[slideIndex - 1].classList.add("activeDot");
+      setTimeout(showSlides, 3000);
+    }
+    showSlides();
+  </script>
+</body>
+</html>

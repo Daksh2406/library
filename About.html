@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>हमारी लाइब्रेरी — About</title>
+  <style>
+    :root{
+      --bg: #f7fbff;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --muted: #6b7280;
+      --radius: 14px;
+      --maxw: 1000px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #eef6ff);
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:24px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow: 0 8px 30px rgba(37,99,235,0.08);
+      padding:28px;
+      gap:20px;
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      align-items:start;
+    }
+
+    /* responsive */
+    @media (max-width:900px){
+      .container{ grid-template-columns: 1fr; padding:18px }
+    }
+
+    header{
+      grid-column:1/-1;
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .logo{
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#60a5fa,#1e40af);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:20px;
+      flex-shrink:0;
+      box-shadow: 0 6px 18px rgba(30,64,175,0.12);
+    }
+    h1{ font-size:20px; margin:0; }
+    p.lead{ margin:4px 0 0; color:var(--muted); font-size:14px }
+
+    .about-content{
+      padding-right:18px;
+    }
+
+    .card{
+      background: linear-gradient(180deg,#ffffff,#fbfdff);
+      border-radius:12px;
+      padding:18px;
+      margin-bottom:14px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+    }
+
+    .section-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .section-title h2{ font-size:16px; margin:0 }
+    .muted{ color:var(--muted); font-size:14px; }
+
+    ul.features{
+      list-style:none;
+      padding:0;
+      margin:8px 0 0;
+      display:grid;
+      gap:10px;
+    }
+    ul.features li{
+      display:flex;
+      gap:12px;
+      align-items:start;
+    }
+    .dot{
+      min-width:10px;
+      height:10px;
+      border-radius:50%;
+      margin-top:6px;
+      background:var(--accent);
+      box-shadow: 0 4px 10px rgba(37,99,235,0.12);
+    }
+
+    .sidebar{
+      position:relative;
+    }
+    .info{
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    .stats{
+      display:flex;
+      gap:12px;
+      margin-top:12px;
+    }
+    .stat{
+      background:#f8fbff;
+      border-radius:10px;
+      padding:10px;
+      text-align:center;
+      flex:1;
+    }
+    .stat b{ display:block; font-size:18px; color:#0f172a }
+    .cta{
+      margin-top:14px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      padding:10px 12px;
+      border-radius:10px;
+      border:0;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .btn-primary{
+      background:var(--accent);
+      color:white;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.12);
+    }
+    .btn-ghost{
+      background:transparent;
+      border:1px solid #e6eefc;
+      color:var(--accent);
+    }
+
+    /* read more */
+    .more{
+      max-height:240px;
+      overflow:hidden;
+      transition:max-height .35s ease;
+    }
+    .more.open{ max-height:2000px }
+
+    /* small footer note */
+    .note{ font-size:13px; color:var(--muted); margin-top:8px }
+
+    /* accessibility focus */
+    button:focus, a:focus{ outline:3px solid rgba(37,99,235,0.18); outline-offset:2px }
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <header>
+      <div class="logo" aria-hidden="true">LB</div>
+      <div>
+        <h1>नगर पुस्तकालय — हमारा परिचय</h1>
+        <p class="lead">ज्ञान का केंद्र • समुदाय का साथी • हर आयु के पाठकों के लिए</p>
+      </div>
+    </header>
+
+    <section class="about-content" aria-labelledby="about-heading">
+      <article class="card" id="about-heading">
+        <div class="section-title">
+          <h2>हमारी कहानी</h2>
+          <span class="muted">स्थापना: 1998</span>
+        </div>
+
+        <p class="info">
+          नगर पुस्तकालय की स्थापना 1998 में स्थानीय नागरिकों और शिक्षकों की पहल से हुई। हमारा उद्देश्य सूचना, शिक्षा और मनोरंजन का एक खुला मंच बनाना है जहाँ हर कोई मुफ्त या कम लागत पर पहुँच सके।
+        </p>
+
+        <div id="moreText" class="more">
+          <p class="info" style="margin-top:10px">
+            वर्षों में हमने पाठ्यपुस्तकों, शोध-ग्रंथों, स्थानीय इतिहास और डिजिटल संसाधनों का बड़ा संग्रह बनाया है। साथ ही बच्चों के लिए कथा-सत्र, वरिष्ठ नागरिकों के लिए पुस्तक क्लब, और छात्रों के लिए रिसर्च सपोर्ट जैसी गतिविधियाँ नियमित रूप से आयोजित की जाती हैं।
+          </p>
+
+          <div class="section-title" style="margin-top:12px">
+            <h2>हमारा मिशन</h2>
+          </div>
+          <ul class="features" aria-label="मिशन बिंदु">
+            <li><span class="dot" aria-hidden="true"></span>पठन-संस्कृति को बढ़ावा देना और ज्ञान के स्रोतों तक समान पहुँच सुनिश्चित करना।</li>
+            <li><span class="dot" aria-hidden="true"></span>प्रौद्योगिकी और पारंपरिक पुस्तक दोनों के माध्यम से शिक्षा को सुलभ बनाना।</li>
+            <li><span class="dot" aria-hidden="true"></span>समुदाय के साथ मिलकर लोक-संस्कृति और स्थानीय इतिहास का संरक्षण।</li>
+          </ul>
+
+          <div class="section-title" style="margin-top:12px">
+            <h2>हमारी सेवाएँ</h2>
+          </div>
+          <ul class="features" aria-label="सेवाएँ">
+            <li><span class="dot" aria-hidden="true"></span>किताब उधार (लॉन्ड्री कार्ड / डिजिटल कार्ड)</li>
+            <li><span class="dot" aria-hidden="true"></span>रीडिंग रूम और स्टडी स्पेस</li>
+            <li><span class="dot" aria-hidden="true"></span></li>डिजिटल रिसोर्सेज (ऑनलाइन डेटाबेस, ई-बुक)</li>
+            <li><span class="dot" aria-hidden="true"></span>कार्यशालाएँ, कहानी सत्र, और पठन क्लब</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:10px; align-items:center;">
+          <button id="toggleBtn" class="btn btn-ghost" aria-expanded="false">और पढ़ें</button>
+          <button class="btn btn-primary" onclick="location.href='#join'">सदस्य बनें</button>
+        </div>
+
+        <p class="note">नोट: विवरण को अनुकूलित करने के लिए HTML में टेक्स्ट सीधे बदलें — जैसे कि स्थापना वर्ष, कार्यक्रम और सेवाएँ।</p>
+      </article>
+
+      <!-- optional extra content -->
+      <article class="card" aria-labelledby="values-heading">
+        <div class="section-title">
+          <h2 id="values-heading">हमारे मूल्य</h2>
+        </div>
+        <p class="info">
+          समानता • खुलापन • समुदाय सेवा • जीवन भर सीखना — ये मूल्य हमारे रोज़मर्रा के निर्णय और कार्यक्रम संचालित करते हैं।
+        </p>
+      </article>
+
+    </section>
+
+    <aside class="sidebar" aria-label="लाइब्रेरी जानकारी">
+      <div class="card">
+        <div class="section-title">
+          <h2>रूटिन जानकारी</h2>
+        </div>
+        <p class="info">
+          पता: मुख्य बाजार, नगर — 110001<br>
+          समय: सोमवार — शनिवार, 9:00 AM — 6:00 PM<br>
+          फ़ोन: +91 98765 43210
+        </p>
+
+        <div class="stats" aria-hidden="true">
+          <div class="stat">
+            <b>12,300+</b>
+            पुस्तकें
+          </div>
+          <div class="stat">
+            <b>450+</b>
+            सदस्य
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn btn-primary" href="https://form.jotform.com/252773912832058">ऑनलाइन सदस्यता</a>
+        
+          <button class="btn btn-ghost" onclick="alert('कार्यक्रम कैलेंडर खुल रहा है।')">कार्यक्रम</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <div class="section-title">
+          <h2>व्यवहारिक सुझाव</h2>
+        </div>
+        <p class="info">
+          1) अगर आप पहली बार आ रहे हैं तो लाइब्रेरी कार्ड बनवाएँ।<br>
+          2) मोबाइल में ई-कलेक्शन देखने के लिए वेबसाइट का सदस्य लॉगिन उपयोग करें।<br>
+        </p>
+      </div>
+
+      <div id="join" class="card" style="margin-top:12px">
+        <div class="section-title">
+          <h2>सदस्यता</h2>
+        </div>
+        <p class="info">सदस्यता सरल और सस्ती है। फ़ीस, नियम और आवश्यक दस्तावेज़ के लिए लाइब्रेरी कार्यालय से संपर्क करें।</p>
+      </div>
+    </aside>
+
+  </main>
+
+  <script>
+    // Read more toggle
+    const toggleBtn = document.getElementById('toggleBtn');
+    const more = document.getElementById('moreText');
+
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = more.classList.toggle('open');
+      toggleBtn.textContent = isOpen ? 'कम दिखाएँ' : 'और पढ़ें';
+      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // small accessibility enhancement: keyboard shortcut 'm' to toggle more (for demo)
+    document.addEventListener('keydown', (e) => {
+      if (e.key.toLowerCase() === 'm' && !e.metaKey && !e.ctrlKey) {
+        toggleBtn.click();
+      }
+    });
+  </script>
+  
+</body>
+</html>
